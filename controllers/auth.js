@@ -9,9 +9,8 @@ const { User } = require('../models/user');
 const register = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-    if (user) {
-        throw HttpError(409, "Email already in use")
-    }
+    if (user) throw HttpError(409, "Email already in use")
+    
 
     const hashPassword = await bcrypt.hash(password, 10);
 
