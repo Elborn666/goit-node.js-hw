@@ -37,9 +37,9 @@ const addSchemaFavorite = Joi.object({
   favorite: Joi.boolean().required(),
 })
 
-const contactchemas = {
+const contactschemas = {
   addSchema,
   addSchemaFavorite,
 }
 
-module.exports = {Contact, contactchemas}
+module.exports = {Contact, contactschemas}
