@@ -25,7 +25,7 @@ const userSchema = new Schema ({
 })
 
 userSchema.post("save", handleMongooseError);
-const User = model("contact", userSchema);
+const User = model("user", userSchema);
 
 const registerSchema = Joi.object({
     name: Joi.string().required(),
@@ -42,6 +42,5 @@ const authschemas = {
     registerSchema,
     loginSchema,
 }
-
 
 module.exports = {User, authschemas};
